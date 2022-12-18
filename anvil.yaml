@@ -1,0 +1,42 @@
+services:
+- source: /runtime/services/tables.yml
+  client_config: {}
+  server_config: {auto_create_missing_columns: false}
+startup: {type: form, module: Main}
+package_name: Portfolio_Optimizer_2_0
+allow_embedding: false
+name: Portfolio Optimizer 2.0
+runtime_options:
+  version: 2
+  client_version: '3'
+  server_version: python3-full
+  server_spec: null
+  server_spec_disabled: {requirements: torch==1.13.0, base: python310-datascience}
+metadata: {title: Portfolio Optimizer, description: 'WashU ESE senior design capstone
+    project by Nick Falshaw, Peter Fadlovich, and Moshe Leonard', logo_img: 'asset:Athletics-Youth-Bear-Logo-2018.jpg'}
+startup_form: AffinityPropagation
+native_deps: {head_html: ''}
+db_schema:
+  optimal_weights:
+    title: optimal_weights
+    client: none
+    server: full
+    columns:
+    - name: Ticker
+      admin_ui: {width: 200}
+      type: string
+    - name: raw_weight
+      admin_ui: {width: 200}
+      type: number
+    - name: Weight
+      admin_ui: {width: 200}
+      type: string
+  matlab_plots:
+    title: matlab_plots
+    client: none
+    server: full
+    columns:
+    - name: Plots
+      admin_ui: {width: 200}
+      type: media
+renamed: true
